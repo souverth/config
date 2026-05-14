@@ -1,0 +1,76 @@
+{
+    // ── Workbench ──────────────────────────────────────────
+    "workbench.activityBar.location": "bottom",
+    "workbench.productIconTheme": "bongocat",
+    "editor.smoothScrolling": true,
+    // ── Agent Manager ──────────────────────────────────────
+    "ag-manager.automation.enabled": true,
+    "ag-manager.automation.rules": [
+        "Continue",
+        "Allow Once"
+    ],
+    // Chế độ planning: agent tạo kế hoạch trước khi code
+    "ag-manager.planning.enabled": true,
+    // Terminal policy: "auto" = agent tự chạy lệnh an toàn,
+    // "turbo" = chạy tất cả, "off" = luôn hỏi
+    "ag-manager.terminal.executionPolicy": "auto",
+    // Giới hạn browser để tránh prompt injection
+    "ag-manager.browser.urlAllowlist": [
+        "localhost",
+        "127.0.0.1"
+    ],
+    // Chặn agent truy cập file ngoài workspace
+    "ag-manager.agent.nonWorkspaceFileAccess": false,
+    // Artifact review: agent hỏi trước khi ghi file lớn
+    "ag-manager.artifact.reviewPolicy": "always",
+    // ── Editor ─────────────────────────────────────────────
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
+    "files.trimTrailingWhitespace": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.fontFamily": "SF Mono",
+    "editor.lineHeight": 1.85,
+    "editor.fontSize": 15,
+    // ── Terminal ───────────────────────────────────────────
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.cursorBlinking": true,
+    // ── Inline Suggestions (AI) ────────────────────────────
+    "editor.inlineSuggest.enabled": true,
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "editor.inlineSuggest.suppressSuggestions": false,
+    // ── IntelliSense / Autocomplete ────────────────────────
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off", // không gợi ý trong comment
+        "strings": "on"
+    },
+    "editor.quickSuggestionsDelay": 0, // gợi ý ngay lập tức
+    "editor.suggestSelection": "first", // tự chọn item đầu tiên
+    "editor.tabCompletion": "on", // Tab để accept suggestion
+    "editor.suggest.preview": true, // preview suggestion inline
+    "editor.suggest.showMethods": true,
+    "editor.suggest.showFunctions": true,
+    "editor.suggest.showVariables": true,
+    "editor.suggest.showClasses": true,
+    "editor.suggest.showKeywords": true,
+    "editor.suggest.localityBonus": true, // ưu tiên gợi ý gần cursor
+    // ── Parameter Hints ────────────────────────────────────
+    "editor.parameterHints.enabled": true,
+    "editor.parameterHints.cycle": true, // cycle qua các overloads
+    // ── Word Based Suggestions ─────────────────────────────
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    // ── Agent Suggestions (Antigravity) ───────────────────
+    "ag-manager.suggestions.enabled": true,
+    "ag-manager.suggestions.autoTrigger": true,
+    "ag-usage.dateFormatLocale": "vi-vn",
+    "ag-usage.notifyOnFullQuota": true,
+    "ag-usage.statusBarAlignment": "Left",
+    "git.autofetch": true,
+}

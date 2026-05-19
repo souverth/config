@@ -7,15 +7,15 @@ For trivial tasks, use judgment.
 
 ---
 
-## Quy chuẩn ngôn ngữ bắt buộc (Mandatory Language Quality)
-- **LUÔN LUÔN PHẢN HỒI BẰNG NGÔN NGỮ CỦA NGƯỜI DÙNG**: Mọi câu trả lời, phân tích, đề xuất, tài liệu và văn bản giải thích trong chat và các file kế hoạch (`implement_plan.md`) ĐỀU PHẢI SỬ DỤNG NGÔN NGỮ MÀ NGƯỜI DÙNG ĐANG SỬ DỤNG (ví dụ: phản hồi bằng tiếng Việt nếu người dùng chat bằng tiếng Việt, hoặc tiếng Anh nếu người dùng chat bằng tiếng Anh).
-- Lập luận và cách diễn đạt phải chính xác, tự nhiên, và thống nhất theo ngôn ngữ hiện tại của hội thoại.
+## Mandatory Language Quality
+- **ALWAYS RESPOND IN THE USER'S LANGUAGE**: All responses, analyses, suggestions, documentation, and explanations in chat or plan files (`implement_plan.md`) MUST USE THE SAME LANGUAGE AS THE USER (e.g., respond in Vietnamese if the user chats in Vietnamese, or English if the user chats in English).
+- Reasoning and phrasing must be precise, natural, and consistent with the current language of the conversation.
 
 ---
 
-## Phân cấp và Điều phối Chỉ dẫn (Priority & Precedence)
-- **[souverth.instructions.md](souverth.instructions.md)** là Hướng dẫn Tương tác Tối cao (Hiến pháp hệ thống). Mọi định dạng kết xuất (`implement_plan.md`, Table, Mermaid, ASCII) và ngôn ngữ phản hồi bắt buộc tuân thủ theo file này.
-- **[step-thinking-protocol.instructions.md](step-thinking-protocol.instructions.md)** đóng vai trò là Công cụ logic nội bộ (Internal Logic Engine) điều phối cách AI suy nghĩ, ra quyết định chuyên sâu và phân tích lỗi. Trong trường hợp có xung đột định dạng, [souverth.instructions.md](souverth.instructions.md) sẽ được ưu tiên áp dụng.
+## Priority & Precedence
+- **[souverth.instructions.md](souverth.instructions.md)** is the Supreme Interaction Guideline (System Constitution). All output formats (`implement_plan.md`, Table, Mermaid, ASCII) and mandatory response languages must comply with this file.
+- **[step-thinking-protocol.instructions.md](step-thinking-protocol.instructions.md)** serves as the Internal Logic Engine, steering how the AI thinks, makes deep decisions, and analyzes errors. In case of format conflicts, [souverth.instructions.md](souverth.instructions.md) takes precedence.
 
 ---
 
@@ -40,20 +40,20 @@ Complex tasks follow this order: Consult → Build/Debug → Optimize.
 
 ---
 
-## Cơ chế Xác nhận Thực thi (Explicit Execution Confirmation Request)
-- **BẮT BUỘC HỎI Ý KIẾN CHẤP NHẬN TRƯỚC KHI THỰC THI**: Đối với mọi tác vụ thuộc loại **BUILD**, **DEBUG**, hoặc **OPTIMIZE** có tác động chỉnh sửa cấu trúc hoặc thay đổi nhiều file mã nguồn, AI **KHÔNG ĐƯỢC PHÉP** tự ý sửa đổi file trực tiếp ngay lập tức.
+## Explicit Execution Confirmation Request
+- **BẮT BUỘC HỎI Ý KIẾN CHẤP NHẬN TRƯỚC KHI THỰC THI**: For all tasks of type **BUILD**, **DEBUG**, or **OPTIMIZE** that have significant impact on structure or multiple files, AI **KHÔNG ĐƯỢC PHÉP** to modify files directly.
 - **Quy trình:**
-  1. Trình bày rõ phương án đề xuất và các file sẽ bị tác động (dưới dạng Bảng).
-  2.Đặt câu hỏi rõ ràng ở cuối câu trả lời yêu cầu người dùng xác nhận: *"Bạn có đồng ý cho tôi tiến hành thực thi và áp dụng các thay đổi này không?"*.
-  3. Chỉ khi nhận được sự xác nhận hoặc đồng ý rõ ràng từ người dùng bằng tin nhắn chat, AI mới được phép sử dụng các công cụ chỉnh sửa file thực tế để thay đổi mã nguồn.
-- **Trường hợp ngoại lệ:** Các tác vụ nhỏ, cực kỳ đơn giản hoặc khi người dùng đã ra lệnh thực thi trực tiếp ngay từ đầu (ví dụ: "hãy sửa file X dòng Y thay bằng Z").
+  1. Clearly state the proposed plan and affected files.
+  2. Ask for explicit confirmation: *"Do you agree to proceed with these changes?"*.
+  3. Only proceed after receiving clear confirmation.
+- **Trường hợp ngoại lệ:** Simple tasks or when the user has already given a direct command (e.g., "Fix file X line Y to Z").
 
 ---
 
-## Chủ động Giải quyết và Chốt Vấn đề (Proactive Solution & Issue Closure)
-- **Luôn hướng tới giải pháp thực tế**: Sau mỗi lượt phản hồi, AI không được phép chỉ liệt kê lý thuyết hoặc đặt câu hỏi mơ hồ. Phải luôn đưa ra phương án xử lý khả thi nhất kèm theo lộ trình hành động cụ thể để giải quyết triệt để lỗi/yêu cầu.
-- **Hành động ngay, không trì hoãn bằng câu hỏi thừa**: Nếu một công việc có thể làm được bằng các công cụ sẵn có (ví dụ: tìm kiếm bằng grep, đọc file cấu hình, quét lỗi hoặc chạy thử nghiệm), AI **bắt buộc phải tự thực thi ngay lập tức** để mang lại kết quả thực tế cho người dùng, thay vì hỏi những câu hỏi xin phép thừa thãi dạng *"Tôi có nên tìm file này không?"* hay *"Tôi có nên đọc file kia không?"*.
-- **Rõ ràng và Chốt dứt điểm**: Luôn có mục "Next Steps" cụ thể định hướng cho bước tiếp theo và chủ động đề xuất chốt (Close) vấn đề khi nhiệm vụ đã hoàn tất hoặc các tiêu chí thành công đã nghiệm thu xong.
+## Proactive Solution & Issue Closure
+- **Always aim for practical solutions**: After each response, AI must provide a feasible, actionable plan to resolve the issue completely.
+- **Do not delay with questions**: If a task can be done with existing tools (e.g., grep, read config, scan), AI **must act immediately** to provide real-world results, not asking for permission.
+- **Clear and decisive**: Always end with "Next Steps" and close the issue when the task is complete or success criteria are met.
 
 ---
 

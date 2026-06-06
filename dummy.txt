@@ -31,3 +31,4 @@ update 386
 update 7929
 update 7811
 update 7279
+update 942

@@ -1,5 +1,5 @@
-/* 
-This is default and very simple styles file for Yasb. 
+/*
+This is default and very simple styles file for Yasb.
 For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
 */
 :root {
@@ -22,9 +22,9 @@ For more information about configuration options, please visit the Wiki https://
     font-family: "JetBrainsMono NFP";
 }
 .yasb-bar {
-    background-color: var(--bg-color1);
+    background-color: rgba(18, 53, 44, 0.5); /* Fadetouched deep green */
     border-radius: 8px;
-    border: 1px solid var(--bg-color2);
+    border: 1px solid rgba(43, 179, 148, 0.55); /* Bright mint/green border */
 }
 /* Global styles for ToolTip */
 .tooltip {
@@ -33,7 +33,7 @@ For more information about configuration options, please visit the Wiki https://
     color: var(--text1);
     padding: 5px 10px;
     font-size: 12px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-weight: 600;
     margin-top: 4px;
 }
@@ -42,9 +42,9 @@ For more information about configuration options, please visit the Wiki https://
 .context-menu .menu-checkbox {
     background-color: var(--bg-color1);
     padding: 4px 0px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-size: 12px;
-    color: var(--text1)
+    color: var(--text1);
 }
 .context-menu {
     border-radius: 8px;
@@ -67,7 +67,7 @@ For more information about configuration options, please visit the Wiki https://
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
     background-color: var(--bg-color2);
-    color: #FFFFFF;
+    color: #ffffff;
 }
 .context-menu::separator {
     height: 1px;
@@ -84,14 +84,14 @@ For more information about configuration options, please visit the Wiki https://
     font-size: 12px;
     margin: 0;
     color: var(--text1);
-    font-family: 'Segoe UI'
+    font-family: "Segoe UI";
 }
 .context-menu .submenu::item:disabled {
     margin: 0;
     padding-left: 16px;
 }
 .context-menu .menu-checkbox .checkbox:unchecked {
-    color: var(--text2)
+    color: var(--text2);
 }
 .context-menu .menu-checkbox .checkbox::indicator {
     width: 12px;
@@ -121,7 +121,7 @@ For more information about configuration options, please visit the Wiki https://
     padding: 0px 2px;
 }
 .komorebi-active-layout {
-    padding: 0
+    padding: 0;
 }
 .komorebi-workspaces .offline-status {
     color: var(--text4);
@@ -169,10 +169,14 @@ For more information about configuration options, please visit the Wiki https://
     font-size: 9px;
     font-weight: 700;
     font-family: "Segoe UI";
-    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 160ms ease;
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        transform 160ms ease;
 }
 .glazewm-workspaces .ws-btn:hover {
-    background-color: rgba(120, 156, 239, 0.20);
+    background-color: rgba(120, 156, 239, 0.2);
     border-color: rgba(147, 177, 248, 0.82);
     color: #f2f5ff;
     transform: translateY(-1px);
@@ -191,34 +195,34 @@ For more information about configuration options, please visit the Wiki https://
 .glazewm-workspaces .ws-btn.active_populated,
 .glazewm-workspaces .ws-btn.focused_empty,
 .glazewm-workspaces .ws-btn.focused_populated {
-    background-color: rgba(79, 132, 255, 0.30);
-    border: 1px dashed rgba(129, 174, 255, 0.98);
+    background-color: rgba(74, 222, 128, 0.3);
+    border: 1px dashed rgba(74, 222, 128, 0.98);
     color: #ffffff;
     animation: wsOrbit 2.2s ease-in-out infinite;
 }
 @keyframes wsOrbit {
     0% {
-        background-color: rgba(79, 132, 255, 0.24);
-        border-color: rgba(129, 174, 255, 0.78);
-        box-shadow: 0 0 0 0 rgba(129, 174, 255, 0.00);
+        background-color: rgba(74, 222, 128, 0.24);
+        border-color: rgba(74, 222, 128, 0.78);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
         transform: translateY(0);
     }
     35% {
-        background-color: rgba(99, 154, 255, 0.34);
-        border-color: rgba(171, 202, 255, 1.00);
-        box-shadow: 0 0 0 2px rgba(129, 174, 255, 0.16);
+        background-color: rgba(74, 222, 128, 0.34);
+        border-color: rgba(187, 247, 208, 1);
+        box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.16);
         transform: translateY(-1px);
     }
     65% {
-        background-color: rgba(70, 122, 247, 0.38);
-        border-color: rgba(120, 201, 255, 0.96);
-        box-shadow: 0 0 0 4px rgba(129, 174, 255, 0.10);
+        background-color: rgba(34, 197, 94, 0.38);
+        border-color: rgba(134, 239, 172, 0.96);
+        box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
         transform: translateY(0);
     }
     100% {
-        background-color: rgba(79, 132, 255, 0.24);
-        border-color: rgba(129, 174, 255, 0.78);
-        box-shadow: 0 0 0 0 rgba(129, 174, 255, 0.00);
+        background-color: rgba(74, 222, 128, 0.24);
+        border-color: rgba(74, 222, 128, 0.78);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
         transform: translateY(0);
     }
 }
@@ -238,7 +242,7 @@ For more information about configuration options, please visit the Wiki https://
     min-height: 80px;
     border-radius: 12px;
     background-color: #ffffff11;
-    border: 8px solid rgba(255, 255, 255, 0)
+    border: 8px solid rgba(255, 255, 255, 0);
 }
 .power-menu-popup .button.hover {
     background-color: #134c96;
@@ -247,16 +251,16 @@ For more information about configuration options, please visit the Wiki https://
 .power-menu-popup .button .label {
     font-size: 13px;
     font-weight: 600;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     color: #a9a9ac;
 }
 .power-menu-popup .button .icon {
     font-size: 32px;
-    color: rgba(255, 255, 255, 0.4)
+    color: rgba(255, 255, 255, 0.4);
 }
 .power-menu-popup .button.hover .label,
 .power-menu-popup .button.hover .icon {
-    color: #ffffff
+    color: #ffffff;
 }
 .power-menu-popup .profile-info {
     padding: 0 0 16px 0;
@@ -269,19 +273,19 @@ For more information about configuration options, please visit the Wiki https://
     font-weight: 600;
     color: #cdd6f4;
     margin-top: 0;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
 }
 .power-menu-popup .profile-info .profile-account-type {
     font-size: 15px;
     color: rgba(205, 214, 244, 0.6);
     margin-top: 8px;
-    font-family: 'Segoe UI'
+    font-family: "Segoe UI";
 }
 .power-menu-popup .profile-info .profile-email {
     font-size: 13px;
     color: rgba(205, 214, 244, 0.4);
     margin-top: 4px;
-    font-family: 'Segoe UI'
+    font-family: "Segoe UI";
 }
 .power-menu-overlay {
     background-color: rgba(0, 0, 0, 0.15);
@@ -527,7 +531,7 @@ For more information about configuration options, please visit the Wiki https://
     font-size: 14px;
     font-weight: 600;
     margin-left: 10px;
-    font-family: 'Segoe UI'
+    font-family: "Segoe UI";
 }
 .media-menu .artist {
     font-size: 13px;
@@ -542,7 +546,6 @@ For more information about configuration options, please visit the Wiki https://
     border-radius: 3px;
     background-color: #bac2de;
     padding: 2px 4px;
-
 }
 .media-menu .source.firefox {
     background-color: #ff583b;
@@ -581,7 +584,7 @@ For more information about configuration options, please visit the Wiki https://
 }
 .media-menu .btn.play {
     background-color: rgba(255, 255, 255, 0.1);
-    font-size: 20px
+    font-size: 20px;
 }
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
@@ -591,7 +594,7 @@ For more information about configuration options, please visit the Wiki https://
 
 .media-menu .playback-time {
     font-size: 13px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     color: #7f849c;
     margin-top: 20px;
     min-width: 100px;
@@ -606,7 +609,6 @@ For more information about configuration options, please visit the Wiki https://
     height: 2px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
-
 }
 .media-menu .progress-slider::groove:hover {
     background: transparent;
@@ -716,7 +718,7 @@ For more information about configuration options, please visit the Wiki https://
     background-color: rgba(17, 17, 27, 0.88);
 }
 .github-menu .contents .item:hover {
-    background-color: rgba(120, 156, 239, 0.10);
+    background-color: rgba(120, 156, 239, 0.1);
 }
 .home-menu {
     background-color: var(--bg-color1);
@@ -726,7 +728,7 @@ For more information about configuration options, please visit the Wiki https://
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font-size: 12px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     color: var(--text1);
     font-weight: 600;
 }
@@ -778,7 +780,7 @@ For more information about configuration options, please visit the Wiki https://
     color: #d4b8ff;
 }
 .power-menu-widget {
-    padding: 0 2px 0 4px;
+    padding: 0 8px 0 4px;
 }
 
 .calendar {

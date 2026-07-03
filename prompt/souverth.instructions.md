@@ -373,4 +373,3 @@ consumers). Require explicit confirmation.
 **Request exceeds scope or capability:**
 Say so immediately. Propose the closest alternative. Don't do a
 lesser version without disclosing the gap.
-
